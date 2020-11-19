@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Press me</button>
+
+    <script>
+        var button = document.querySelector('button');
+
+        button.onclick = function () {
+            var name = prompt('What is your name?');        // 팝업 대화 상자를 통해 질문에 응답하도록 요청한 다음 지정된 변수 내에 입력하는 텍스트를 저장
+            alert('Hello ' + name + ', nice to see you!');  // 두 개의 문자열 리터럴 및 변수의 값이 포함된 다른 팝업을 표시
+        }
+    </script>
+</body>
+
+</html>
