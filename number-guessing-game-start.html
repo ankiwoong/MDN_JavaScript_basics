@@ -118,6 +118,7 @@
             guessCount = 1; // guessCount 변수를 1로 한다.
 
             // 표시된 정보를 모두 초기화한다.
+            // querySelectorAll() 메소드를 사용하여 <div class="resultParas">안의 모든 문장들의 배열을 변수로 만들고 있다. 그러고 반복을 통해 각각의 배열 원소에 접근하여, 내용을 제거
             var resetParas = document.querySelectorAll('.resultParas p');
             for (var i = 0; i < resetParas.length; i++) {
                 resetParas[i].textContent = '';
