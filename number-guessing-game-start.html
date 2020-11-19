@@ -59,9 +59,39 @@
         var guessCount = 1;
         var resetButton;
 
-        // console에 checkGuess(); 입력 후 결과물 확인
         function checkGuess() {
-            alert('I am a placeholder');
+            var userGuess = Number(guessField.value);   // userGuess변수를 선언 / 텍스트 필드에서 입력된 현재 값들을 변수의 값으로 지정
+
+            // guessCount 변수가 1인지 확인 조건문(즉, 현재 플레이어의 게임이 처음인지 아닌지를 판단하는 조건)
+            if (guessCount === 1) {
+                guesses.textContent = 'Previous guesses: ';
+            }
+            guesses.textContent += userGuess + ' ';
+
+            // 처음에 지정한 randomNumber ==  사용자가 추측한 값(userGuess)
+            if (userGuess === randomNumber) {   // 플레이어가 숫자를 맞춤 / 게임 승리
+                lastResult.textContent = 'Congratulations! You got it right!';  // 축하 메시지 출력
+                lastResult.style.backgroundColor = 'green';     // CSS 스타일 지정
+                lowOrHi.textContent = '';
+                setGameOver();  // setGameOver() 함수 호출
+            } else if (guessCount === 10) {     //  사용자가 마지막 순서인지를 계산
+                lastResult.textContent = '!!!GAME OVER!!!'; // 게임을 이기지는 않았기 때문에 축하메시지를 제외
+                setGameOver();  // setGameOver() 함수 호출
+            } else {    // 숫자를 맞추지도 못하고 차례가 남았을 때
+                lastResult.textContent = 'Wrong!';  // 틀렸음 메시지 출력
+                lastResult.style.backgroundColor = 'red';   // CSS 스타일 지정
+                // 정답보다 숫자가 큰지 작은지도 계산하여 적절한 메시지를 표시
+                if (userGuess < randomNumber) {
+                    lowOrHi.textContent = 'Last guess was too low!';
+                } else if (userGuess > randomNumber) {
+                    lowOrHi.textContent = 'Last guess was too high!';
+                }
+            }
+
+            // 다음 숫자 추측
+            guessCount++;       // guessCount 변수에 1을 더함으로, 사용자의 차례가 지나갔음
+            guessField.value = '';      // 값에 상관없이 텍스트필드를 공란
+            guessField.focus();     // 다음값이 입력될 수 있도록 한다.
         }
     </script>
 </body>
