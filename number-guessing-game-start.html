@@ -53,11 +53,14 @@
 
         // 다음의 입력과 버튼을 받고, 추측된 값을 나중에 받도록 하는 역할
         var guessSubmit = document.querySelector('.guessSubmit');
-        var guessField = document.querySelector('.guessField');
+        var guessField = document.querySelector('.guessField');     // HTML의 입력 폼 필드의 정보를 저장 / 단순한 숫자를 포함
 
         // 추측 개수와, 아직은 있지않은 버튼을 리셋하는 변수
         var guessCount = 1;
         var resetButton;
+
+        // 자동으로 커서를 페이지가 뜨자마자 <input> 텍스트 필드에 위치
+        guessField.focus();
 
         function checkGuess() {
             var userGuess = Number(guessField.value);   // userGuess변수를 선언 / 텍스트 필드에서 입력된 현재 값들을 변수의 값으로 지정
