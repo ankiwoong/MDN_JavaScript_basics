@@ -44,9 +44,20 @@
     </div>
 
     <script>
+        var randomNumber = Math.floor(Math.random() * 100) + 1; // 1과 100사이의 임의의 수를 지정
 
-      // Your JavaScript goes here
+        // 결과 문장을 저장하는 기준으로 저장되고, 코드상에서 나중에 문장에 추가되도록 사용
+        var guesses = document.querySelector('.guesses');
+        var lastResult = document.querySelector('.lastResult');
+        var lowOrHi = document.querySelector('.lowOrHi');
 
+        // 다음의 입력과 버튼을 받고, 추측된 값을 나중에 받도록 하는 역할
+        var guessSubmit = document.querySelector('.guessSubmit');
+        var guessField = document.querySelector('.guessField');
+
+        // 추측 개수와, 아직은 있지않은 버튼을 리셋하는 변수
+        var guessCount = 1;
+        var resetButton;
     </script>
 </body>
 
