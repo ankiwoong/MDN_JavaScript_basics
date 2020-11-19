@@ -14,7 +14,9 @@
         const button = document.querySelector('button');
 
         button.onclick = function () {
+            // 이름을 입력하도록 요청한 화면에 상자를 띄운 다음, 변수에 값을 저장
             let name = prompt('What is your name?');
+            // 변수 값에서 가져온, 이름이 포함된 환영 메시지가 표시
             alert('Hello ' + name + ', nice to see you!');
         }
     </script>
