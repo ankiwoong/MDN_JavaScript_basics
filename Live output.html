@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="/static/build/styles/samples.37902ba3b7fe.css" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+        html {
+            font-family: sans-serif;
+        }
+
+        h2 {
+            font-size: 16px;
+        }
+
+        .a11y-label {
+            margin: 0;
+            text-align: right;
+            font-size: 0.7rem;
+            width: 98%;
+        }
+
+        body {
+            margin: 10px;
+            background: #f5f9fa;
+        }
+    </style>
+
+    <title>Looping code - Active_learning_2 - code sample</title>
+</head>
+
+<body>
+    <h2>Live output</h2>
+    <div class="output" style="height: 100px;overflow: auto;">
+        <p class="admitted">Admit: </p>
+        <p class="refused">Refuse: </p>
+    </div>
+
+    <script>
+        const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+        const admitted = document.querySelector('.admitted');
+        const refused = document.querySelector('.refused');
+
+        admitted.textContent = 'Admit: ';
+        refused.textContent = 'Refuse: '
+        let i = 0;
+
+        do {
+            if (people[i] === 'Phil' || people[i] === 'Lola') {
+                refused.textContent += people[i] + ', ';
+            } else {
+                admitted.textContent += people[i] + ', ';
+            }
+            i++;
+        } while (i < people.length);
+
+        refused.textContent = refused.textContent.slice(0, refused.textContent.length - 2) + '.';
+        admitted.textContent = admitted.textContent.slice(0, admitted.textContent.length - 2) + '.';
+    </script>
+</body>
+
+</html>
